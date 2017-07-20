@@ -503,8 +503,8 @@ Haskell. Verfübar über [hackage](https://hackage.haskell.org/package/aeson) un
 
 ## Cabal Leitfaden
 
-Cabal Hell war ein Problem für Haskell Nutzer vor der Einführung von
-Sandboxes. Eine Installation außerhalb einer sandbox wird in die user
+Cabal Hell (Cabal-Hölle) war ein Problem für Haskell Nutzer vor der Einführung von
+Sandboxes. Eine Installation außerhalb einer Sandbox wird in die user
 package-db installieren. Das ist *keine* gute Idee außer für grundlegende Pakete wie
 Cabal, alex, und happy. Nichts anderes sollte in den user oder der globalen
 package-db installiert sein, außer du weißt was du tust
@@ -523,10 +523,10 @@ Kurz gesagt:
 
 - Nutze `cabal repl` um eine Projekt bezogene ghci Instanz zu starten
 
-Die vorgeschlagene, sandbox-basierte Methode sollte Paket Abhängigkeits Probleme vermeiden
-aber sie ist inkompatibel zu der Art wie die Haskell Plattform fertig gebaute Pakete bereitstellt.
-Wenn du momentan noch Haskell lernst und nicht verstehst wie ghc-pkg und Cabal funktionieren,
-*nutze nicht die Plattform* und stattdessen die Instruktionen, die zu Beginn erklärt wurden.
+Die vorgeschlagene, sandboxbasierte Methode sollte Probleme mit Paketabhängigkeits vermeiden,
+aber sie ist inkompatibel zu der Art wie die Haskell-Plattform fertig gebaute Pakete bereitstellt.
+Wenn du momentan noch Haskell lernst und nicht verstehst, wie ghc-pkg und Cabal funktionieren,
+*nutze nicht die Plattform*, sondern die folge den Instruktionen, die zu Beginn erklärt wurden.
 
 ## Stackage
 
@@ -567,13 +567,13 @@ Info mit Dokumentations- und Build-Status.
 ## Was du wirklich wissen solltest
 
 Damit Haddock Dokumentation für verwandte Pakete inkludiert, musst du `documentation: True`
-in deiner `~/.cabal/config` setzen. Wenn es auf Standard Wert (`False`) gelassen wurde,
+in deiner `~/.cabal/config` setzen. Wenn es auf Standardwert (`False`) gelassen wurde,
 musst du alle Pakete löschen und neu installieren bevor die Haddocks generiert werden.
 
 Die andere Sache, an die man denken sollte, ist, dass aufgrund der Art wie `$pkg` interpoliert
 wird *von* cabal, nicht von dir, die `html-location` und `content-location` Parameter
-*in Apostrophen* stehen *müssen* und in die Shell eingegeben werden oder in einem Shell Skript stehen.
-Sie werden nicht in einer Makefile funktionieren, da Make denken wird es seien Make Variablen.
+*in Apostrophen* stehen *müssen* und in die Shell eingegeben werden oder in einem Shellskript stehen.
+Sie werden nicht in einer Makefile funktionieren, da Make denken wird es seien Make-Variablen.
 
 ```bash
 #! /usr/bin/env sh
@@ -614,18 +614,18 @@ die ich empfehlen würde:
 
 ## Welche Frontend Sprache nutze ich?
 
-GHCJS und Haste sind beide komplett Haskell. GHCJS wird mit mehr Haskell
-Paketen funktionieren als Haste, aber ist egal für viele Frontend Projekte.
-Purescript ist kein Haskell, daher ist es nicht möglich Code direkt
+GHCJS und Haste sind beide komplett Haskell. GHCJS wird mit mehr Haskell-Paketen
+funktionieren als Haste, aber ist egal für viele Frontend-Projekte.
+Purescript ist kein Haskell, daher ist es nicht möglich, Code direkt
 mit dem Backend zu teilen.
 
-GHCJS hat den größten Laufzeit Overhead mit über 100kb (luite arbeitet daran).
+GHCJS hat den größten Laufzeit-Overhead mit über 100kb (luite arbeitet daran).
 Haste und Purescript sind vergleichbar.
 
-PureScript hat die beste JS Tooling Integration (nutzt gulp/grunt/bower), GHCJS
+PureScript hat die beste JS-Tooling-Integration (nutzt gulp/grunt/bower), GHCJS
 und Haste integrieren besser mit Haskells Tooling (Cabal).
 
-Alle drei sind eine gute Wahl und werden für die meisten Frontend Projekte genügen.
+Alle drei sind eine gute Wahl und werden für die meisten Frontend-Projekte genügen.
 
 # Für ein tiefergehendes Verständnis für Laziness, NF, WHNF
 
@@ -655,12 +655,12 @@ Alle drei sind eine gute Wahl und werden für die meisten Frontend Projekte gen�
 
 # Lenses und Prisms
 
-Nachdem du vertraut bist mit Haskell, solltest du unbedingt in Betracht ziehen
+Nachdem du mit Haskell vertraut bist, solltest du unbedingt in Betracht ziehen,
 Lenses und Prims zu lernen, auch wenn du nur ein "Nutzer" bist. Du brauchst nicht
-du zu grunde liegende Kategorie zu verstehen damit es nützlich ist.
+die zu Grunde liegende Kategorie zu verstehen damit es nützlich ist.
 
-Die Schwierigkeit Lens zu nutzen wird oft stark überschätzt. Jeder der vertraut ist
-mit Functor/Foldable/Traversable (oder nur dem ersten der drei) kann Lenses und
+Die Schwierigkeit, Lens zu nutzen wird oft stark überschätzt. Jeder, der vertraut ist
+mit Functor/Foldable/Traversable (oder nur dem ersten der drei), kann Lenses und
 Prisms bereits nutzen, um sein Leben leichter zu machen.
 
 Wenn du jemals etwas wie `(fmap . fmap)` gemacht hast, hast du bereits in deinem
@@ -676,13 +676,13 @@ Siehe hier für weitere Informationen: [Lens Paket auf Hackage](http://hackage.h
 
 # Recursion Schemes
 
-Einige der verrückten \*-morphismus wörter, die du gehört hast, sind eigentlich
-über Rekursion. Beachte - Bevor du diese Material betrachtest, solltest du wissen,
-wie man foldr für Listen implementiert und mindestens eine andere Datenstruktur,
+Einige der verrückten \*-morphismus-Wörter, die du gehört hast, handeln eigentlich
+von Rekursion. Beachte - Bevor du dieses Material betrachtest, solltest du wissen,
+wie man `foldr` für Listen implementiert und mindestens eine andere Datenstruktur,
 wie z.B. einen Baum (folds sind Catamorphismen). Wenn du auch noch weißt, wie man
 ein unfold (Anamorphismus) implementiert, ist das hilfreich.
 
-Diese Material passt gut mit Traversable und Foldable zusammen.
+Dieses Material passt gut mit Traversable und Foldable zusammen.
 
 - [An introduction to recursion schemes](http://patrickthomson.ghost.io/an-introduction-to-recursion-schemes/)
 
