@@ -215,9 +215,9 @@ Installiere die Binary Distribution, wie unten beschrieben, mit [diesem tarball]
 ## Windows
 
 - Der [minimale ghc Installer für Windows](http://neilmitchell.blogspot.com/2014/12/beta-testing-windows-minimal-ghc.html)
-  ist in der Lage `network` und andere zu installieren. Technisch gesehen befindet er sich in der Beta, sollte aber für die Zwecke eines jeden der diese Anleitung ließt funktionieren.
+  ist in der Lage `network` und andere zu installieren. Technisch gesehen befindet er sich in der Beta, sollte aber für die Zwecke eines jeden der diese Anleitung liest funktionieren.
 
-Vergesse nicht den Installer als Administrator auszuführen, da er in deinen Programmen installieren will.
+Vergiss nicht, den Installer als Administrator auszuführen, da er in deinen Programmen installieren will.
 
 ## Andere Linux Nutzer
 
